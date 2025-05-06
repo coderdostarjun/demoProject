@@ -1,9 +1,12 @@
-import 'package:demo_project/view/allbanner/all_banner_screen.dart';
-import 'package:demo_project/view/home/widget/menu_items.dart';
-import 'package:demo_project/view/province/province_screen.dart';
+import 'package:demo_project/view/admin/alldriver/alldriver_rank_screen.dart';
+import 'package:demo_project/view/admin/alltaxirank/alltaxirank_screen.dart';
+import 'package:demo_project/view/admin/home/widget/menu_items.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+
+import '../../admin/province/province_screen.dart';
+import '../allbanner/all_banner_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -48,10 +51,21 @@ class HomeScreen extends StatelessWidget {
                     Get.to(ProvinceScreen());
                   },
                   child: menuItem(Icons.location_pin, "All Province")),
-              menuItem(Icons.local_taxi, "All Taxi Rank"),
-              menuItem(Icons.person, "All Driver"),
+              InkWell(
+                  onTap: (){
+                    Get.back();
+                    Get.to(()=>AlltaxirankScreen());
+                  },
+                  child: menuItem(Icons.local_taxi, "All Taxi Rank")),
+              InkWell(
+                  onTap: (){
+                    Get.back();
+                    Get.to(()=>AlldriverRankScreen());
+                  },
+                  child: menuItem(Icons.person, "All Driver")),
+              SizedBox(height: 30,),
               menuItem(Icons.logout, "LogOut",
-                  iconColor: Colors.red, textColor: Colors.red),
+                  iconColor: Colors.red,)
             ],
           ),
         ),

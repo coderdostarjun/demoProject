@@ -1,6 +1,4 @@
-import 'package:demo_project/view/allbanner/all_banner_screen.dart';
-import 'package:demo_project/view/home/home_screen.dart';
-import 'package:demo_project/view/province/province_screen.dart';
+import 'package:demo_project/view/admin/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
